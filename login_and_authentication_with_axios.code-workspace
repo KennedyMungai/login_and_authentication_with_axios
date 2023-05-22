@@ -6,7 +6,12 @@
 	],
 	"settings": {
 		"cSpell.words": [
-			"errmsg"
+			"confirmnote",
+			"errmsg",
+			"fontawesome",
+			"fortawesome",
+			"pwdnote",
+			"uidnote"
 		]
 	}
 }
