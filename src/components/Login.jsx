@@ -1,31 +1,31 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useContext } from 'react'
 
 const Login = () => {
-    const userRef = useRef(null)
-    const errRef = useRef(null)
-    
-    const [user, setUser] = useState('')
+	const userRef = useRef(null)
+	const errRef = useRef(null)
+
+	const [user, setUser] = useState('')
 	const [pwd, setPwd] = useState('')
-    const [errMsg, setErrMsg] = useState('')
-    const [success, setSuccess] = useState(false)
-    
-    useEffect(() => {
+	const [errMsg, setErrMsg] = useState('')
+	const [success, setSuccess] = useState(false)
+
+	useEffect(() => {
 		userRef.current.focus()
 	}, [])
-    
-    useEffect(() => {
+
+	useEffect(() => {
 		setErrMsg('')
 	}, [pwd, user])
-    
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        console.log(user, pwd)
+
+	const handleSubmit = async (e) => {
+		e.preventDefault()
+		console.log(user, pwd)
 		setUser('')
 		setPwd('')
 		setSuccess(true)
-	}    
+	}
 
-    return (
+	return (
 		<>
 			{success ? (
 				<section>
