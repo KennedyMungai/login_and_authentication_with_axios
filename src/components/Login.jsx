@@ -6,7 +6,8 @@ const Login = () => {
     
     const [user, setUser] = useState('')
 	const [pwd, setPwd] = useState('')
-	const [errMsg, setErrMsg] = useState('')
+    const [errMsg, setErrMsg] = useState('')
+	const [success, setSuccess] = useState(false)
 
 	return <div>Login</div>
 }
