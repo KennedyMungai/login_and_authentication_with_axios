@@ -19,7 +19,17 @@ const Login = () => {
     
     
 
-	return <div>Login</div>
+    return (
+		<section>
+			<p
+				ref={errRef}
+				className={errMsg ? 'errmsg' : 'offscreen'}
+				aria-live='assertive'
+			>
+				{errMsg}
+			</p>
+		</section>
+	)
 }
 
 export default Login
