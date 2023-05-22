@@ -18,7 +18,8 @@ const Login = () => {
 	}, [pwd, user])
     
     const handleSubmit = async (e) => {
-		e.preventDefault()
+        e.preventDefault()
+		setSuccess(true)
 	}    
 
     return (
