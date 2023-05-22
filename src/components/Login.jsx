@@ -42,6 +42,8 @@ const Login = () => {
 
             const accessToken = response?.data?.accessToken
 
+            const roles = response?.data?.roles
+
 			setUser('')
 			setPwd('')
 			setSuccess(true)
