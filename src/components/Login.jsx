@@ -17,7 +17,9 @@ const Login = () => {
 		setErrMsg('')
 	}, [pwd, user])
     
-    
+    const handleSubmit = async (e) => {
+		e.preventDefault()
+	}    
 
     return (
 		<section>
