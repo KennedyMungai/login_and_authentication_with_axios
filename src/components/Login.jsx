@@ -40,6 +40,8 @@ const Login = () => {
 
 			console.log(JSON.stringify(response.data))
 
+            const accessToken = response?.data?.accessToken
+
 			setUser('')
 			setPwd('')
 			setSuccess(true)
