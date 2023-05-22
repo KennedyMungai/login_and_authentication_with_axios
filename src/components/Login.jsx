@@ -26,9 +26,26 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 
-		setUser('')
-		setPwd('')
-		setSuccess(true)
+		try {
+			const response = await axios.post(
+				LOGIN_URL,
+				JSON.stringify(
+					{ user, pwd },
+					{
+						Headers: { 'Content-Type': 'application/json' },
+						withCredentials: true
+					}
+				)
+			)
+
+			console.log(JSON.stringify(response.data))
+
+			setUser('')
+			setPwd('')
+			setSuccess(true)
+		} catch (error) {
+			console.log(error.message)
+		}
 	}
 
 	return (
