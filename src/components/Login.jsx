@@ -26,7 +26,7 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 
-		try {
+        try {
 			const response = await axios.post(
 				LOGIN_URL,
 				JSON.stringify(
@@ -40,17 +40,25 @@ const Login = () => {
 
 			console.log(JSON.stringify(response.data))
 
-            const accessToken = response?.data?.accessToken
+			const accessToken = response?.data?.accessToken
 
-            const roles = response?.data?.roles
+			const roles = response?.data?.roles
 
-            setAuth({ user, pwd, roles, accessToken })
+			setAuth({ user, pwd, roles, accessToken })
 
 			setUser('')
 			setPwd('')
 			setSuccess(true)
 		} catch (error) {
-			console.log(error.message)
+			if (!error?.response) {
+				setErrMsg('No Server Response')
+			} else if (error.response?.status === 400) {
+				setErrMsg('Missing Username or Password')
+			} else if (error.response?.status === 401) {
+				setErrMsg('Unauthorized')
+			} else {
+				setErrMsg('Login Failed')
+			}
 		}
 	}
 
